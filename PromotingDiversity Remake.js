@@ -67,7 +67,7 @@ export function button8_click_1(event, $w) {
 
 }
 
-//Creates functionality of then second button
+//Creates functionality of the second button
 export function button7_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
@@ -92,6 +92,7 @@ export function button7_click(event, $w) {
 
 }
 
+//Creates functionality of the third button
 export function button6_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
@@ -116,6 +117,7 @@ export function button6_click(event, $w) {
 
 }
 
+//Creates functionality of the fourth button
 export function button4_click_1(event, $w) {
 
 	//Checks if the textbox is the shortText version
