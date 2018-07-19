@@ -1,18 +1,21 @@
-
 // For full API documentation, including code examples, visit http://wix.to/94BuAAs
 
 let textID = ["#text1", "#text21", "#text22", "#text23"]; //An array to call on any textbox
 
+let shortID = ["#text30","#text31","#text32","#text33"];//an array to call on the shortText textboxes
+
 let buttonID = ["#button8", "#button9", "#button10", "#button11"]; //An array to call on any button
 
 let texts = []; //An array to hold the shortText and fullText properties of each textbox
+
+let shortTexts = [];//an array to hold the shortText version of each textbox
 
 //Creates and object to define properties of textbox
 function text(shortText, fullText) {
 
 	this.shortText = shortText || "", //Short version of the text 
 
-		this.fullText = fullText || ""; //Full version of the text
+	this.fullText = fullText || ""; //Full version of the text
 
 }
 
@@ -31,13 +34,19 @@ $w.onReady(function () {
 		text.shortText = text.fullText.substr(0, 70) + " ...";
 
 		//Sets the shown text to the shortText version
-		$w(textID[i]).text = text.shortText;
+		$w(shortID[i]).text = text.shortText;
+
+		//makes the full text disappears
+		$w(textID[i]).collapse();
+
+		//makes the short text appear
+		$w(shortID[i]).expand();
 
 		//Pushes the fullText version of the textbox into the array texts
 		texts.push(text.fullText);
 
 		//Pushes the shortText version of the textbox into the array texts
-		texts.push(text.shortText);
+		shortTexts.push(text.shortText);
 
 	}
 
@@ -47,10 +56,13 @@ $w.onReady(function () {
 export function button8_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
-	if ($w(textID[0]).text === texts[1]) {
+	if ($w(textID[0]).collapsed === true) {
 
-		// if currently displaying short text, display the full text
-		$w(textID[0]).text = texts[0];
+		//expands the fullText version
+		$w(textID[0]).expand();
+
+		//collapses the shortText version
+		$w(shortID[0]).collapse();
 
 		//Changes the text of the button
 		$w(buttonID[0]).label = "Show less";
@@ -58,8 +70,11 @@ export function button8_click(event, $w) {
 		//Checks if the textbox is the FullText version    
 	} else {
 
-		// if currently displaying full text, display the short text
-		$w(textID[0]).text = texts[1];
+		//collapses the fullText version
+		$w(textID[0]).collapse();
+
+		//expands the shortText version
+		$w(shortID[0]).expand();
 
 		//Changes the text of the button
 		$w(buttonID[0]).label = "Show more";
@@ -72,10 +87,13 @@ export function button8_click(event, $w) {
 export function button9_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
-	if ($w(textID[1]).text === texts[3]) {
+	if ($w(textID[1]).collapsed === true) {
 
-		// if currently displaying short text, display the full text
-		$w(textID[1]).text = texts[2];
+		//expands the fullText version
+		$w(textID[1]).expand();
+
+		//collapses the shortText version
+		$w(shortID[1]).collapse();
 
 		//Changes the text of the button
 		$w(buttonID[1]).label = "Show less";
@@ -83,8 +101,11 @@ export function button9_click(event, $w) {
 		//Checks if the textbox is the fullText version    
 	} else {
 
-		//if currently displaying full text, display the short text
-		$w(textID[1]).text = texts[3];
+		//collapses the fullText version
+		$w(textID[1]).collapse();
+
+		//expands the shortText version
+		$w(shortID[1]).expand();
 
 		//Changes the text of the button
 		$w(buttonID[1]).label = "Show more";
@@ -97,10 +118,13 @@ export function button9_click(event, $w) {
 export function button10_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
-	if ($w(textID[2]).text === texts[5]) {
+	if ($w(textID[2]).collapsed === true) {
 
-		// if currently displaying short text, display the full text
-		$w(textID[2]).text = texts[4];
+		//expands the fullText version
+		$w(textID[2]).expand();
+
+		//collapses the shortText version
+		$w(shortID[2]).collapse();
 
 		//Changes the text of the button
 		$w(buttonID[2]).label = "Show less";
@@ -108,8 +132,11 @@ export function button10_click(event, $w) {
 		//Checks if the textbox is the fullText version    
 	} else {
 
-		// if currently displaying full text, display the short text
-		$w(textID[2]).text = texts[5];
+		//collapses the fullText version
+		$w(textID[2]).collapse();
+
+		//expands the shortText version
+		$w(shortID[2]).expand();
 
 		//Changes the text of the button
 		$w(buttonID[2]).label = "Show more";
@@ -122,10 +149,13 @@ export function button10_click(event, $w) {
 export function button11_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
-	if ($w(textID[3]).text === texts[7]) {
+	if ($w(textID[3]).collapsed === true) {
+		
+		//expands the fullText version
+		$w(textID[3]).expand();
 
-		// if currently displaying short text, display the full text
-		$w(textID[3]).text = texts[6];
+		//collapses the shortText version
+		$w(shortID[3]).collapse();
 
 		//Changes the text of the button
 		$w(buttonID[3]).label = "Show less";
@@ -133,8 +163,11 @@ export function button11_click(event, $w) {
 		//Checks if the textbox is the fullText version    
 	} else {
 
-		// if currently displaying full text, display the short text
-		$w(textID[3]).text = texts[7];
+		//collapses the fullText version
+		$w(textID[3]).collapse();
+
+		//expands the shortText version
+		$w(shortID[3]).expand();
 
 		//Changes the text of the button
 		$w(buttonID[3]).label = "Show more";
@@ -142,5 +175,4 @@ export function button11_click(event, $w) {
 	}
 
 }
-
 
