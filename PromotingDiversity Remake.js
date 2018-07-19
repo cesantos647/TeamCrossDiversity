@@ -1,8 +1,9 @@
+
 // For full API documentation, including code examples, visit http://wix.to/94BuAAs
 
-let textID = ["#text22", "#text23", "#text24", "#text25"]; //An array to call on any textbox
+let textID = ["#text1", "#text21", "#text22", "#text23"]; //An array to call on any textbox
 
-let buttonID = ["#button8", "#button7", "#button6", "#button4"]; //An array to call on any button
+let buttonID = ["#button8", "#button9", "#button10", "#button11"]; //An array to call on any button
 
 let texts = []; //An array to hold the shortText and fullText properties of each textbox
 
@@ -43,7 +44,7 @@ $w.onReady(function () {
 });
 
 //Creates functionality for the first button
-export function button8_click_1(event, $w) {
+export function button8_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
 	if ($w(textID[0]).text === texts[1]) {
@@ -68,7 +69,7 @@ export function button8_click_1(event, $w) {
 }
 
 //Creates functionality of the second button
-export function button7_click(event, $w) {
+export function button9_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
 	if ($w(textID[1]).text === texts[3]) {
@@ -93,7 +94,7 @@ export function button7_click(event, $w) {
 }
 
 //Creates functionality of the third button
-export function button6_click(event, $w) {
+export function button10_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
 	if ($w(textID[2]).text === texts[5]) {
@@ -118,7 +119,7 @@ export function button6_click(event, $w) {
 }
 
 //Creates functionality of the fourth button
-export function button4_click_1(event, $w) {
+export function button11_click(event, $w) {
 
 	//Checks if the textbox is the shortText version
 	if ($w(textID[3]).text === texts[7]) {
@@ -141,3 +142,5 @@ export function button4_click_1(event, $w) {
 	}
 
 }
+
+
